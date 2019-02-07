@@ -2,9 +2,9 @@ defmodule Pillplop.Pharmacy do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "pharmacies" do
     field :name, :string
+    field :password, :string, virtual: true
     field :password_hash, :string
 
     timestamps()

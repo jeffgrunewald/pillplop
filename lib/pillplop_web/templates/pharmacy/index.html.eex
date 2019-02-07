@@ -1,0 +1,8 @@
+<h1>Pharmacies</h1>
+<table class="table">
+  <%= for pharmacy <- @pharmacies do %>
+    <tr>
+      <td><%= pharmacy.name %> </td>
+    </tr>
+  <% end %>
+</table>

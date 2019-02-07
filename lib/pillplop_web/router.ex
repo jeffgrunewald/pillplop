@@ -17,6 +17,7 @@ defmodule PillplopWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/pharmacies", PharmacyController
   end
 
   # Other scopes may use custom stacks.
