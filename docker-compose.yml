@@ -1,0 +1,10 @@
+version: '2.2'
+services:
+  postgres:
+    image: postgres:11.1-alpine
+    environment:
+      POSTGRES_DB: pillplop
+      POSTGRES_USER: phoenix
+      POSTGRES_PASSWORD: super-secret
+    ports:
+      - "5432:5432"

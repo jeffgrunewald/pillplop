@@ -1,0 +1,30 @@
+# macOS cruft
+.DS_Store
+# Common VCS dirs
+.git/
+.gitignore
+.bzr/
+.bzrignore
+.hg/
+.hgignore
+.svn/
+# Common backup files
+*.swp
+*.bak
+*.tmp
+*~
+.project
+.idea/
+~.tmproj
+# Common Elixir and Phoenix stuffs
+_build/
+rel/
+deps/
+lib/
+assets/
+config/
+test/
+priv/
+*.exs
+*.ex
+*.lock

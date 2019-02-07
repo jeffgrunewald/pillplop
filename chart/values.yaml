@@ -1,0 +1,12 @@
+postgres:
+  container:
+    image: postgres
+    tag: 11.1-alpine
+    pullPolicy: IfNotPresent
+  db:
+    name: pillplop
+    user: phoenix
+    password: super-secret
+  service:
+    port: 5432
+    type: ClusterIP

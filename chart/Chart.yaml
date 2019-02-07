@@ -1,0 +1,5 @@
+name: pillplop
+apiVersion: v1
+description: A pharmacy order-tracking application
+version: 0.1.0
+tillerVersion: ">=2.8.0"
