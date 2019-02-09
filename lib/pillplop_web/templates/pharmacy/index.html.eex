@@ -2,7 +2,9 @@
 <table class="table">
   <%= for pharmacy <- @pharmacies do %>
     <tr>
-      <td><%= pharmacy.name %> </td>
+      <td><%= pharmacy.name %>
+        (<%= link "View", to: Routes.pharmacy_path(@conn, :show, pharmacy) %>)
+      </td>
     </tr>
   <% end %>
 </table>

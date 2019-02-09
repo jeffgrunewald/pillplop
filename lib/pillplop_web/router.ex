@@ -9,6 +9,11 @@ defmodule PillplopWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :browser_auth do
+    plug Pillplop.Auth.Pipeline
+    plug :set_pharmacy_as_asset
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -17,11 +22,19 @@ defmodule PillplopWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/pharmacies", PharmacyController
+    resources "/pharmacies", PharmacyController, only: [:new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PillplopWeb do
-  #   pipe_through :api
-  # end
+  scope "/", PillplopWeb do
+    pipe_through [:browser, :browser_auth]
+    resources "/pharmacies", PharmacyController, only: [:show, :index, :update]
+  end
+
+  def set_pharmacy_as_asset(conn, _) do
+    pharmacy = conn
+    |> Pillplop.Auth.Guardian.Plug.current_resource
+    IO.inspect pharmacy
+    assign(conn, :current_pharmacy, pharmacy)
+  end
 end

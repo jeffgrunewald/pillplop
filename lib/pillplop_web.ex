@@ -42,6 +42,7 @@ defmodule PillplopWeb do
       import PillplopWeb.ErrorHelpers
       import PillplopWeb.Gettext
       alias PillplopWeb.Router.Helpers, as: Routes
+      import PillplopWeb.ViewHelper
     end
   end
 

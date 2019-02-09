@@ -1,0 +1,8 @@
+<%= if logged_in?(@conn) do %>
+  <%= link "Sign out", to: Routes.session_path(@conn, :delete, :access),
+      method: :delete %>
+  <%= current_pharmacy(@conn).name %>
+<% else %>
+  <%= link "Create new account", to: Routes.pharmacy_path(@conn, :new) %>
+  <%= link "Sign in", to: Routes.session_path(@conn, :new) %>
+<% end %>

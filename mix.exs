@@ -26,7 +26,9 @@ defmodule Pillplop.MixProject do
 
   defp deps do
     [
+      {:bcrypt_elixir, "~> 1.1"},
       {:comeonin, "~> 4.1"},
+      {:guardian, "~> 1.2"},
       {:phoenix, "~> 1.4.0"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
