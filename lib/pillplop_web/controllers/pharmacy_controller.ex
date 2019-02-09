@@ -62,4 +62,22 @@ defmodule PillplopWeb.PharmacyController do
         |> redirect(to: Routes.page_path(conn, :index))
     end
   end
+
+  # def delete(conn, %{"id" => id}) do
+  #   pharmacy = Repo.get(Pharmacy, id)
+
+  #   cond do
+  #     pharmacy == Guardian.Plug.current_resource(conn) ->
+  #       case Repo.delete(pharmacy) do
+  #         {:ok, pharmacy} ->
+  #           conn
+  #           |> Guardian.Plug.sign_out
+  #           |> put_flash(:info, "Account deleted; sorry to see you go :(")
+  #           |> redirect(to: Routes.page_path(conn, :index))
+  #         {:error, _} ->
+  #           conn
+  #           |> render("show.html", pharmacy: pharmacy)
+  #       end
+  #   end
+  # end
 end

@@ -14,4 +14,5 @@
     <%= error_tag f, :password %>
   </div>
   <%= submit "Update pharmacy", class: "btn btn-primary" %>
+  <%= link "Delete Account", to: Routes.pharmacy_path(@conn, :delete, @pharmacy), method: :delete, class: "btn btn-danger" %>
 <% end %>
