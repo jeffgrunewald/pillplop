@@ -1,5 +1,7 @@
 # Pillplop
 
+Sample online store in phoenix
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
