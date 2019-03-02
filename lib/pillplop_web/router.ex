@@ -28,7 +28,12 @@ defmodule PillplopWeb.Router do
 
   scope "/", PillplopWeb do
     pipe_through [:browser, :browser_auth]
+
     resources "/pharmacies", PharmacyController, only: [:show, :index, :update, :delete]
+    resources "/orders", OrderController
+    resources "/locations", LocationController
+    resources "/prescriptions", PrescriptionController
+    resources "/patients", PatientController
   end
 
   def set_pharmacy_as_asset(conn, _) do

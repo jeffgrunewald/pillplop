@@ -1,4 +1,4 @@
-defmodule Pillplop.Patient do
+defmodule Pillplop.Customers.Patient do
   use Ecto.Schema
   import Ecto.Changeset
 

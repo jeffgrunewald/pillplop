@@ -1,0 +1,23 @@
+<h1>Show Order</h1>
+
+<ul>
+
+  <li>
+    <strong>Patient:</strong>
+    <%= @order.patient_id %>
+  </li>
+
+  <li>
+    <strong>Prescription:</strong>
+    <%= @order.prescription_id %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @order.location_id %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.order_path(@conn, :edit, @order) %></span>
+<span><%= link "Back", to: Routes.order_path(@conn, :index) %></span>

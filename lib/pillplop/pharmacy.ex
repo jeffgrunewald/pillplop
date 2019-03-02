@@ -6,6 +6,8 @@ defmodule Pillplop.Pharmacy do
     field :name, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    has_many :locations, Pillplop.Sales.Location
+    has_many :locations_orders, through: [:locations, :orders]
 
     timestamps()
   end
